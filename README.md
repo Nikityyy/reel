@@ -1,28 +1,39 @@
-# Alt Image Generator
+# The Daily Reel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nutlope/alt-text-generator&env=REPLICATE_API_KEY&project-name=alt-tag-generator&repo-name=alt-tag-generator)
+![The Daily Reel](favicon.avif)
 
-This Flask API will generate a description for any image using AI. If you're looking for the TypeScript version, [click here](https://github.com/vercel/examples/tree/main/solutions/alt-tag-generator).
+A sophisticated movie recommendation system built with Flask and Google's Gemini AI. The Daily Reel helps users discover films that perfectly match their desires through natural language descriptions.
 
-![Alt Image Generator](ogimage.png)
+## Features
+
+- Natural language movie search
+- AI-powered recommendations using Gemini 1.5
+- Detailed movie information from TMDB
+- Vintage newspaper-inspired UI
+- Interactive examples carousel
 
 ## How it works
 
-This project uses an ML modal from Salesforce called [BLIP](https://github.com/salesforce/BLIP) on [Replicate](https://replicate.com/) to generate relevant alt text for images. You can feed the Flask API endpoint an image as a query param and it will return a one sentence description of that image.
+The Daily Reel uses Google's Gemini 1.5 AI model to understand user queries and find matching movies. Results are enriched with data from The Movie Database (TMDB) API, providing posters, ratings, release dates and descriptions.
 
 ## Running Locally
 
-After cloning the repo, go to [Replicate](https://replicate.com/) to make an account and put your API key in `.env`.
+1. Clone the repository
 
-Then, run the following in the command line and your application will be available at `http://localhost:3000`
-
+2. Create an `.env` file with your API keys:
 ```bash
-npm i -g vercel
-vercel dev
+GENAI_API_KEY=your_gemini_api_key
+TMDB_API_KEY=your_tmdb_api_key
 ```
 
-To use the API route, go to the link below in your browser or run a curl command in your terminal to get a sample result. Feel free to replace the dub.sh link with a link to any image.
-
+3. Install the required dependencies:
 ```bash
-curl http://localhost:3000/generate?imageUrl=https://dub.sh/confpic
+pip install -r requirements.txt
 ```
+
+4. Run the Flask application:
+```bash
+flask run
+```
+
+The application will be available at http://localhost:5000
